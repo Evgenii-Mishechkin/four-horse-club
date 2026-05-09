@@ -579,14 +579,12 @@
   .idea__text-img-box > .idea__img-block,
   .idea__img-table-box > .idea__img-block,
   .idea__table-block {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    transform: none !important;
+    transition: opacity 0.4s ease !important;
   }
   .reveal, .reveal-left, .reveal-right {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    transform: none !important;
+    transition: opacity 0.4s ease !important;
   }
 }
 
