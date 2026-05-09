@@ -528,46 +528,30 @@
 
 /* ===== АНИМАЦИИ ===== */
 
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translate3d(-80px, 0, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-@keyframes slideInRight {
-  from { opacity: 0; transform: translate3d(80px, 0, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translate3d(0, -24px, 0); }
-  to   { opacity: 1; transform: translate3d(0, 0, 0); }
-}
 
-.header__logo-link {
-  will-change: transform, opacity;
-  animation: fadeInDown 0.5s ease both;
-}
-.hero__info-btns-block {
-  will-change: transform, opacity;
-  animation: slideInLeft 0.85s ease 0.15s both;
-}
-.hero__animate {
-  will-change: transform, opacity;
-  animation: slideInRight 0.85s ease 0.25s both;
-}
-.idea__text-img-box .idea__text-block {
-  will-change: transform, opacity;
-  animation: slideInLeft 0.85s ease 0.7s both;
-}
-.idea__text-img-box > .idea__img-block {
-  will-change: transform, opacity;
-  animation: slideInRight 0.85s ease 0.7s both;
-}
-.idea__img-table-box > .idea__img-block {
-  will-change: transform, opacity;
-  animation: slideInLeft 0.85s ease 1.0s both;
-}
+.header__logo-link        { opacity: 0; transform: translate3d(0, -24px, 0); }
+.hero__info-btns-block    { opacity: 0; transform: translate3d(-80px, 0, 0); }
+.hero__animate            { opacity: 0; transform: translate3d(80px, 0, 0);  }
+
+.idea__text-img-box .idea__text-block  { opacity: 0; transform: translate3d(-80px, 0, 0); }
+.idea__text-img-box > .idea__img-block { opacity: 0; transform: translate3d(80px, 0, 0);  }
+.idea__img-table-box > .idea__img-block{ opacity: 0; transform: translate3d(-80px, 0, 0); }
+.idea__table-block                     { opacity: 0; transform: translate3d(80px, 0, 0);  }
+
+.header__logo-link,
+.hero__info-btns-block,
+.hero__animate,
+.idea__text-img-box .idea__text-block,
+.idea__text-img-box > .idea__img-block,
+.idea__img-table-box > .idea__img-block,
 .idea__table-block {
   will-change: transform, opacity;
-  animation: slideInRight 0.85s ease 1.0s both;
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.load-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
 .reveal,
@@ -594,7 +578,11 @@
   .idea__text-img-box .idea__text-block,
   .idea__text-img-box > .idea__img-block,
   .idea__img-table-box > .idea__img-block,
-  .idea__table-block { animation: none; }
+  .idea__table-block {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   .reveal, .reveal-left, .reveal-right {
     opacity: 1;
     transform: none;

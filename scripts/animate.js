@@ -2,6 +2,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initPieceHover();
+    initLoadAnimations();
     initScrollReveal();
   });
 
@@ -20,6 +21,26 @@
         el.style.animation = '';
       });
     });
+  }
+
+  function initLoadAnimations() {
+    function show(selector, delayMs) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      setTimeout(() => {
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          el.classList.add('load-visible');
+        }));
+      }, delayMs);
+    }
+
+    show('.header__logo-link',                        0);
+    show('.hero__info-btns-block',                  150);
+    show('.hero__animate',                           250);
+    show('.idea__text-img-box .idea__text-block',   700);
+    show('.idea__text-img-box > .idea__img-block',  700);
+    show('.idea__img-table-box > .idea__img-block', 1000);
+    show('.idea__table-block',                      1000);
   }
 
   function initScrollReveal() {
