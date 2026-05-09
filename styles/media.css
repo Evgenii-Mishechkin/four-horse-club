@@ -1,35 +1,29 @@
-  
-@media (max-width:1315px) {
+@media (max-width: 1315px) {
+
   .container {
     max-width: 375px;
     padding: 0 20px;
   }
-  /* Header */
+
+  /* ===== HEADER ===== */
   .header {
     top: 18px;
   }
   .header__logo-img img {
     width: 213px;
   }
-  /* Hero */
+
+  /* ===== HERO ===== */
   .hero {
     padding: 90px 0 291px 0;
   }
   .hero__container {
     position: relative;
   }
-  .hero__animate-piece1 {
-    top: 380px;
-  }
-  .hero__animate-piece2 {
-    top: 280px;
-  }
-  .hero__animate-piece3 {
-    top: 577px;
-  }
-  .hero__animate-piece4 {
-    display: none;
-  }
+  .hero__animate-piece1 { top: 380px; }
+  .hero__animate-piece2 { top: 280px; }
+  .hero__animate-piece3 { top: 577px; }
+  .hero__animate-piece4 { display: none; }
   .hero__hdr {
     font-size: 36px;
     line-height: 39.6px;
@@ -54,15 +48,18 @@
     background-color: rgba(255, 255, 255, .9);
     border-color: rgba(255, 255, 255, .9);
   }
-  /* Marquee */
+
+  /* ===== БЕГУЩАЯ СТРОКА ===== */
   .marquee__block {
     padding: 10px 0;
   }
   .marquee__text {
     font-size: 16px;
     line-height: 17.6px;
+    padding-right: 32px;
   }
-  /* Idea */
+
+  /* ===== IDEA ===== */
   .idea {
     padding-top: 48px;
   }
@@ -90,7 +87,7 @@
     flex-direction: column;
   }
   .idea__img-table-box .idea__img-block-mobile {
-    padding: 0;            
+    padding: 0;
   }
   .idea__img {
     height: 402px;
@@ -109,12 +106,8 @@
     flex-wrap: wrap;
     flex-direction: row;
   }
-  .idea__table-row:first-child {
-    padding-top: 0;
-  }
-  .idea__table-row:last-child {
-    padding-bottom: 0;
-  }
+  .idea__table-row:first-child { padding-top: 0; }
+  .idea__table-row:last-child  { padding-bottom: 0; }
   .idea__table-cell {
     padding: 0;
   }
@@ -125,7 +118,7 @@
     padding-top: 0;
   }
   .idea__table-row:not(:last-child) {
-    border-bottom: 2px solid  var(--idea-tbl-border-color);
+    border-bottom: 2px solid var(--idea-tbl-border-color);
   }
   .idea__table-cell-2 {
     border-left: none;
@@ -138,7 +131,7 @@
     line-height: 21.6px;
   }
 
-  /* Stages */ 
+  /* ===== ЭТАПЫ ===== */
   .stages {
     padding-top: 120px;
   }
@@ -166,7 +159,7 @@
   .stages__list {
     margin-bottom: 28px;
     overflow: hidden;
-    grid-template-columns: repeat(5, 330px);
+    grid-template-columns: repeat(5, 335px);
     grid-template-rows: auto;
     grid-auto-flow: column;
     row-gap: 0;
@@ -175,23 +168,21 @@
     align-content: center;
     justify-content: space-evenly;
   }
-
   .stages__list-item {
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 20px;
-
     font-size: 18px;
     line-height: 21.6px;
   }
-  .stages__list-item1, 
+  .stages__list-item1,
   .stages__list-item3,
   .stages__list-item4,
   .stages__list-item6,
   .stages__list-item7 {
     padding-top: 62px;
   }
-  .stages__list-item2, 
+  .stages__list-item2,
   .stages__list-item5 {
     padding-top: 28px;
     padding-bottom: 34px;
@@ -210,7 +201,7 @@
   }
   .stages__list-item7-img {
     display: none;
-  } 
+  }
   .stages__slider-btns-block {
     margin: 0 auto;
     display: flex;
@@ -230,7 +221,7 @@
   .stages__slider-btn:disabled {
     background-color: rgba(49, 49, 49, 0.2);
     cursor: not-allowed;
-  } 
+  }
   .stages__slider-btn:not(:disabled):hover {
     background-color: var(--hero-btn-hover);
   }
@@ -267,18 +258,22 @@
     margin-right: 6px;
   }
   .pagination-dot.active {
-    background-color: var(--text-color); /* Синий цвет для активной точки */
+    background-color: var(--text-color);
   }
-  /* Players Slider */
+
+  /* ===== КАРУСЕЛЬ УЧАСТНИКОВ ===== */
   .slider-players {
     padding-top: 120px;
     padding-bottom: 100px;
+  }
+  .slider-players__hdr-btns-box {
+    margin-bottom: 40px;
   }
   .slider-players__hdr2 {
     font-size: 36px;
     line-height: 39.6px;
   }
-  .slider-players__list {
+  .slider-players__list-container {
     margin-bottom: 40px;
   }
   .slider-players__list-item {
@@ -288,24 +283,25 @@
     min-width: 335px;
     padding: 0;
     margin-right: 40px;
-  } 
+  }
   .slider-players__ava-img {
     max-width: 224px;
   }
   .slider-players__btns-block {
-    display: none;
-  }
-  .slider-players__btns-block-mobile {
-    display: flex;
+    position: static;
     margin: 0 auto;
   }
-  /* Footer */
+
+  /* ===== ФУТЕР ===== */
   .footer {
     padding-bottom: 60px;
   }
 
 }
-@media (max-width:431px) {
+
+@media (max-width: 431px) {
+
+  /* ===== HERO (мобиль) ===== */
   .hero__animate-city-mb {
     position: absolute;
     bottom: -13px;
@@ -331,7 +327,8 @@
     top: 589px;
     right: calc(105% - ((1920px - 100vw) * 0.105));
   }
-  .hero__animate-piece1 img,.hero__animate-piece2 img {
+  .hero__animate-piece1 img,
+  .hero__animate-piece2 img {
     width: 47px;
   }
   .hero__animate-piece2 {
@@ -345,4 +342,5 @@
   .hero__animate-piece3 img {
     width: 99px;
   }
+
 }
