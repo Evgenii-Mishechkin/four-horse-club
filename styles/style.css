@@ -529,41 +529,62 @@
 /* ===== АНИМАЦИИ ===== */
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-80px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translate3d(-80px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(80px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translate3d(80px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translate3d(0, -24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
-.header__logo-link           { animation: fadeInDown  0.5s  ease          both; }
-.hero__info-btns-block       { animation: slideInLeft 0.85s ease 0.15s    both; }
-.hero__animate               { animation: slideInRight 0.85s ease 0.25s   both; }
-
-.idea__text-img-box .idea__text-block  { animation: slideInLeft  0.85s ease 0.7s  both; }
-.idea__text-img-box > .idea__img-block { animation: slideInRight 0.85s ease 0.7s  both; }
-.idea__img-table-box > .idea__img-block{ animation: slideInLeft  0.85s ease 1.0s  both; }
-.idea__table-block                     { animation: slideInRight 0.85s ease 1.0s  both; }
+.header__logo-link {
+  will-change: transform, opacity;
+  animation: fadeInDown 0.5s ease both;
+}
+.hero__info-btns-block {
+  will-change: transform, opacity;
+  animation: slideInLeft 0.85s ease 0.15s both;
+}
+.hero__animate {
+  will-change: transform, opacity;
+  animation: slideInRight 0.85s ease 0.25s both;
+}
+.idea__text-img-box .idea__text-block {
+  will-change: transform, opacity;
+  animation: slideInLeft 0.85s ease 0.7s both;
+}
+.idea__text-img-box > .idea__img-block {
+  will-change: transform, opacity;
+  animation: slideInRight 0.85s ease 0.7s both;
+}
+.idea__img-table-box > .idea__img-block {
+  will-change: transform, opacity;
+  animation: slideInLeft 0.85s ease 1.0s both;
+}
+.idea__table-block {
+  will-change: transform, opacity;
+  animation: slideInRight 0.85s ease 1.0s both;
+}
 
 .reveal,
 .reveal-left,
 .reveal-right {
+  will-change: transform, opacity;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal       { opacity: 0; transform: translateY(52px); }
-.reveal-left  { opacity: 0; transform: translateX(-64px); }
-.reveal-right { opacity: 0; transform: translateX(64px); }
+.reveal       { opacity: 0; transform: translate3d(0, 52px, 0); }
+.reveal-left  { opacity: 0; transform: translate3d(-64px, 0, 0); }
+.reveal-right { opacity: 0; transform: translate3d(64px, 0, 0); }
 
 .reveal.is-visible,
 .reveal-left.is-visible,
 .reveal-right.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translate3d(0, 0, 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
